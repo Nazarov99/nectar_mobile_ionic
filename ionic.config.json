@@ -1,0 +1,7 @@
+{
+  "name": "nectar_mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
