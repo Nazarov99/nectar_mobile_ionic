@@ -1,15 +1,22 @@
 ion-header{
+  background-color: #fff;
 
   &:after{
     display: none;
   }
 
-  ion-toolbar{
+  &.after{
+
+    &:after{
+      display: block;
+    }
+  }
 
     .header{
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 10px;
 
       &__top{
         display: flex;
@@ -50,7 +57,6 @@ ion-header{
         }
       }
     }
-  }
 }
 
 ion-content{
@@ -133,6 +139,8 @@ ion-content{
             &__image{
               display: flex;
               justify-content: flex-start;
+              width: 103px;
+              height: 63px;
             }
             &__name{
               display: flex;
@@ -186,3 +194,113 @@ ion-content{
   }
 
 }
+
+.groceries-content{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+
+  &__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+
+    .left{
+      margin: 0;
+      font-family: 'Gilroy', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+      color: #181725;
+    }
+    .right{
+      font-family: 'Gilroy', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #53B175;
+    }
+  }
+  &__bottom{
+
+    ion-slides{
+
+      ion-slide:nth-child(5n + 1){
+        .category {
+          background-color: #F8A44C70;
+        }
+      }
+
+      ion-slide:nth-child(5n + 2)  {
+        .category{
+          background-color: #53B17570;
+        }
+      }
+
+      ion-slide:nth-child(5n + 3) {
+        .category {
+          background-color: #F7A59325;
+        }
+      }
+
+      ion-slide:nth-child(5n + 4) {
+        .category {
+          background-color: #D3B0E025;
+        }
+      }
+
+      ion-slide:nth-child(5n + 5) {
+        .category {
+          background-color: #FDE59825;
+        }
+      }
+
+      ion-slide{
+        padding: 0;
+        margin-right: 0!important;
+
+        &:nth-child(1){
+          margin-left: 9px!important;
+        }
+
+        .category{
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          border-radius: 18px;
+          width: 62vw;
+          height: 15vh;
+          padding: 10px;
+
+          &__left{
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+
+            img{
+              max-width: 100%;
+              width: 100%;
+            }
+          }
+          &__right{
+
+            span{
+              font-family: 'Gilroy', sans-serif;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 20px;
+              line-height: 25px;
+              color: #3E423F;
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

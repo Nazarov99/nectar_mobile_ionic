@@ -1,0 +1,68 @@
+<ion-content>
+  <div class="header">
+    <div class="header__top">
+      <button type="button" (click)="close()">
+        <img src="assets/icons/back_arrow.svg" alt="">
+      </button>
+    </div>
+    <div class="header__bottom">
+      <img [src]="product.image" alt="">
+    </div>
+  </div>
+  <div class="section">
+    <div class="product-name">
+      <div class="product-name__left">
+        <span class="name">{{product.name}}</span>
+        <span class="sub-name">1kg, Priceg</span>
+      </div>
+      <div class="product-name__right">
+        <img src="assets/icons/favorite.svg" alt="">
+      </div>
+    </div>
+    <div class="product-price">
+      <div class="product-price__left">
+        <button>
+          <img src="assets/icons/minus.svg" alt="">
+        </button>
+        <input type="text">
+        <button>
+          <img src="assets/icons/plus.svg" alt="">
+        </button>
+      </div>
+      <div class="product-price__right">
+        <span>${{product.price}}</span>
+      </div>
+    </div>
+    <div class="product-description">
+      <div class="product-description__top">
+        <span>Product Detail</span>
+        <button (click)="drop('description')">
+          <img [class.rotate-img]="description" src="assets/icons/back_arrow.svg" alt="">
+        </button>
+      </div>
+      <div class="product-description__bottom" *ngIf="description">
+        <span>{{product.description}}</span>
+      </div>
+    </div>
+    <div class="product-feature">
+      <div class="product-feature__top">
+        <div class="left">
+          <span>Nutritions</span>
+        </div>
+        <div class="right">
+          <span>100gr</span>
+          <button (click)="drop('nutritions')">
+            <img [class.rotate-img]="nutritions" src="assets/icons/back_arrow.svg" alt="">
+          </button>
+        </div>
+
+      </div>
+      <div class="product-feature__bottom" *ngIf="nutritions">
+
+      </div>
+    </div>
+    <button type="button" class="add-cart">
+      Add To Basket
+    </button>
+  </div>
+</ion-content>

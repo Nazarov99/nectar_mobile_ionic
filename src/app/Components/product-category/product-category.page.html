@@ -1,0 +1,39 @@
+<ion-header [class.after]="scroll">
+  <div class="product-category-header">
+    <div class="product-category-header__left">
+      <button type="button" (click)="close()">
+        <img src="assets/icons/back_arrow.svg" alt="">
+      </button>
+    </div>
+    <div class="product-category-header__center">
+      <span>Beverages</span>
+    </div>
+    <div class="product-category-header__right">
+      <img src="assets/icons/filter.svg" alt="">
+    </div>
+  </div>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+  <div class="product-section">
+    <div class="product" *ngFor="let product of products" (click)="productDetail(product)">
+      <div class="product__image">
+        <img [src]="product.image" alt="">
+      </div>
+      <div class="product__name">
+        <span class="name">{{product.name}}</span>
+        <span class="sub-name">1kg, Priceg</span>
+      </div>
+      <div class="product__bottom">
+        <div class="price">
+          <span>${{product.price}}</span>
+        </div>
+        <div class="product-add">
+          <button>
+            <img src="assets/icons/prodict-add-btn.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

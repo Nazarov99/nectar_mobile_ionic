@@ -1,6 +1,13 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "nectar_mobile",
+	"appId": "io.ionic.nectar.mobile",
+	"appName": "Nectar",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 10000,
+      "launchAutoHide": false,
+      "backgroundColor": "#53B175"
+    }
+  }
 }

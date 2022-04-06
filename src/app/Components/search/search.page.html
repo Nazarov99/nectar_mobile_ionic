@@ -1,0 +1,24 @@
+<ion-header [class.after]="scroll">
+  <div class="search-header">
+    <div class="search-header__top">
+      <span>Find Products</span>
+    </div>
+    <div class="search-header__bottom">
+      <input type="text" placeholder="Search Store">
+      <div class="search-icon">
+        <img src="assets/icons/search-icon.svg" alt="">
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+  <div class="category">
+    <div class="item" *ngFor="let category of categories" (click)="productCategory()">
+      <div class="image">
+        <img [src]="category.image" alt="">
+      </div>
+      <span>{{category.name}}</span>
+    </div>
+  </div>
+</ion-content>

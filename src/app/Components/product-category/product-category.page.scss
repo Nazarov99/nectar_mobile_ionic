@@ -1,0 +1,123 @@
+ion-header{
+  background-color: #fff;
+
+  &:after{
+    display: none;
+  }
+
+  &.after{
+
+    &:after{
+      display: block;
+    }
+  }
+
+  .product-category-header{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin: 35px 0 10px 0;
+    padding: 0 15px;
+
+    &__left{
+
+      button{
+        background-color: transparent;
+        padding: 0;
+        width: 10px;
+        height: 18px;
+      }
+    }
+    &__center{
+
+      span{
+        font-family: 'Gilroy-Bold', sans-serif;
+        font-size: 20px;
+        line-height: 18px;
+        color: #181725;
+      }
+    }
+    &__right{
+      img{
+        width: 17px;
+        height: 18px;
+      }
+    }
+  }
+}
+
+ion-content{
+
+  .product-section{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    justify-content: space-between;
+
+    .product{
+      padding: 15px;
+      border: 1px solid #E2E2E2;
+      box-sizing: border-box;
+      border-radius: 18px;
+      height: 230px;
+      width: 48%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-bottom: 15px;
+
+      &__image{
+        display: flex;
+        justify-content: flex-start;
+        width: 103px;
+        height: 63px;
+      }
+      &__name{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+
+        .name{
+          font-family: 'Gilroy-Bold', sans-serif;
+          font-size: 16px;
+          line-height: 18px;
+          letter-spacing: 0.1px;
+          color: #181725;
+        }
+        .sub-name{
+          font-family: 'Gilroy-Medium', sans-serif;
+          font-size: 14px;
+          line-height: 18px;
+          color: #7C7C7C;
+          margin-top: 5px;
+        }
+      }
+      &__bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .price{
+
+          span{
+            font-family: 'Gilroy', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 18px;
+            letter-spacing: 0.1px;
+            color: #181725;
+          }
+        }
+        .product-add{
+
+          button{
+            background-color: transparent;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}

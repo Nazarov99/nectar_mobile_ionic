@@ -14,6 +14,14 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./Shared/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'product-detail',
+    loadChildren: () => import('./Shared/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
+  },
+  {
+    path: 'product-category',
+    loadChildren: () => import('./Components/product-category/product-category.module').then(m => m.ProductCategoryPageModule)
+  },
 ];
 @NgModule({
   imports: [

@@ -1,22 +1,20 @@
-<ion-header>
-  <ion-toolbar>
-    <div class="header">
-      <div class="header__top">
-        <img src="assets/icons/mini-logo-icon.svg" alt="">
+<ion-header [class.after]="scroll">
+  <div class="header">
+    <div class="header__top">
+      <img src="assets/icons/mini-logo-icon.svg" alt="">
+    </div>
+    <div class="header__bottom">
+      <div class="search">
+        <span>Search Store</span>
       </div>
-      <div class="header__bottom">
-        <div class="search">
-          <span>Search Store</span>
-        </div>
-        <div class="search-icon">
-          <img src="assets/icons/search-icon.svg" alt="">
-        </div>
+      <div class="search-icon">
+        <img src="assets/icons/search-icon.svg" alt="">
       </div>
     </div>
-  </ion-toolbar>
+  </div>
 </ion-header>
 
-<ion-content>
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
   <ion-slides pager="true" [options]="sliderOpts">
     <ion-slide *ngFor="let slide of sliders">
       <img [src]="slide.img" alt="">
@@ -31,7 +29,7 @@
     <div class="exclusive-content__bottom">
       <ion-slides pager="false" [options]="sliderProductOpts">
         <ion-slide *ngFor="let product of products">
-          <div class="product">
+          <div class="product" (click)="productDetail(product)">
             <div class="product__image">
               <img [src]="product.image" alt="">
             </div>
@@ -63,7 +61,7 @@
     <div class="exclusive-content__bottom">
       <ion-slides pager="false" [options]="sliderProductOpts">
         <ion-slide *ngFor="let product of products">
-          <div class="product">
+          <div class="product" (click)="productDetail(product)">
             <div class="product__image">
               <img [src]="product.image" alt="">
             </div>
@@ -87,18 +85,56 @@
     </div>
   </div>
 
-  <div class="exclusive-content">
-    <div class="exclusive-content__top">
-      <span class="left">Category</span>
+  <div class="groceries-content">
+    <div class="groceries-content__top">
+      <span class="left">Groceries</span>
       <span class="right">See all</span>
     </div>
-    <div class="exclusive-content__bottom">
-      <ion-slides pager="false" [options]="sliderProductOpts">
-        <ion-slide *ngFor="let product of products">
-
+    <div class="groceries-content__bottom">
+      <ion-slides pager="false" [options]="sliderGroceries">
+        <ion-slide *ngFor="let grocery of groceries">
+          <div class="category">
+            <div class="category__left">
+              <img [src]="grocery.image" alt="">
+            </div>
+            <div class="category__right">
+              <span>{{grocery.name}}</span>
+            </div>
+          </div>
         </ion-slide>
       </ion-slides>
     </div>
   </div>
 
+  <div class="exclusive-content">
+    <div class="exclusive-content__bottom">
+      <ion-slides pager="false" [options]="sliderProductOpts">
+        <ion-slide *ngFor="let product of products">
+          <div class="product" (click)="productDetail(product)">
+            <div class="product__image">
+              <img [src]="product.image" alt="">
+            </div>
+            <div class="product__name">
+              <span class="name">{{product.name}}</span>
+              <span class="sub-name">1kg, Priceg</span>
+            </div>
+            <div class="product__bottom">
+              <div class="price">
+                <span>${{product.price}}</span>
+              </div>
+              <div class="product-add">
+                <button>
+                  <img src="assets/icons/prodict-add-btn.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
 </ion-content>
