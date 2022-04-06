@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {Product} from "../../Interfaces/product";
 import {ProductDetailPage} from "../../Shared/product-detail/product-detail.page";
 import {ModalController} from "@ionic/angular";
+import {ProductFilterPage} from "../../Shared/product-filter/product-filter.page";
 
 @Component({
   selector: 'app-product-category',
@@ -32,6 +33,13 @@ export class ProductCategoryPage implements OnInit {
     } else if (event.detail.deltaY < 0) {
       this.scroll = false;
     }
+  }
+
+  async filterProduct() {
+    const modal = await this.modalController.create({
+      component: ProductFilterPage,
+    });
+    return await modal.present();
   }
 
   async productDetail(product: Product) {

@@ -39,9 +39,15 @@ ion-header{
       }
     }
     &__right{
-      img{
-        width: 17px;
-        height: 18px;
+
+      button{
+        background-color: transparent;
+        padding-right: 0;
+
+        img{
+          width: 17px;
+          height: 18px;
+        }
       }
     }
   }

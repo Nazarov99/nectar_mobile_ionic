@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'product-category',
     loadChildren: () => import('./Components/product-category/product-category.module').then(m => m.ProductCategoryPageModule)
   },
+  {
+    path: 'product-filter',
+    loadChildren: () => import('./Shared/product-filter/product-filter.module').then( m => m.ProductFilterPageModule)
+  },
 ];
 @NgModule({
   imports: [

@@ -1,0 +1,59 @@
+<ion-header>
+  <div class="product-filter-header">
+    <div class="product-filter-header__left">
+      <button type="button" (click)="close()">
+        <img src="assets/icons/close.svg" alt="">
+      </button>
+    </div>
+    <div class="product-filter-header__right">
+      <span>Filters</span>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="product-filter-body">
+    <div class="scroll-content">
+      <div class="product-sub-category" *ngIf="subCategory.length">
+        <span class="title">Categories</span>
+        <div class="body">
+          <ng-container *ngFor="let item of subCategory; let i = index">
+            <div class="item"  (click)="filterCategory(item)" *ngIf="i < countList || showMoreCategory">
+              <div class="left">
+                <input type="checkbox" id="{{item.name}}" (change)="filterCategory(item)" [checked]="item.checked">
+                <label for="{{item.name}}"></label>
+              </div>
+              <div class="right">
+                <span [class.active]="item.checked">{{item.name}}</span>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <span class="show-more" *ngIf="!showMoreCategory && subCategory.length > countList" (click)="showMoreCategory = true">Показать еще {{subCategory.length - countList}}</span>
+      </div>
+      <div class="product-sub-category" *ngIf="brand.length">
+        <span class="title">Brand</span>
+        <div class="body">
+          <ng-container *ngFor="let item of brand; let i = index">
+            <div class="item"  (click)="filterBrand(item)" *ngIf="i < countList || showMoreBrand">
+              <div class="left">
+                <input type="checkbox" id="{{item.name}}" (change)="filterBrand(item)" [checked]="item.checked">
+                <label for="{{item.name}}"></label>
+              </div>
+              <div class="right">
+                <span [class.active]="item.checked">{{item.name}}</span>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <span class="show-more" *ngIf="!showMoreBrand && brand.length > countList" (click)="showMoreBrand = true">Показать еще {{brand.length - countList}}</span>
+      </div>
+      <div class="filter-button">
+        <button type="button">
+          Apply Filter
+        </button>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
