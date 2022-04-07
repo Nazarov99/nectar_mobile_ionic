@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'product-filter',
     loadChildren: () => import('./Shared/product-filter/product-filter.module').then( m => m.ProductFilterPageModule)
   },
+  {
+    path: 'order-checkout',
+    loadChildren: () => import('./Shared/order-checkout/order-checkout.module').then( m => m.OrderCheckoutPageModule)
+  },
 ];
 @NgModule({
   imports: [

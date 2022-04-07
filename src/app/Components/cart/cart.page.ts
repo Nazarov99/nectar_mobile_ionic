@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ModalController} from "@ionic/angular";
+import {OrderCheckoutPage} from "../../Shared/order-checkout/order-checkout.page";
 
 @Component({
   selector: 'app-cart',
@@ -19,9 +21,18 @@ export class CartPage implements OnInit {
   ];
   public scroll = false;
 
-  constructor() { }
+  constructor(private modalController: ModalController) { }
 
   ngOnInit() {
+  }
+
+  async openCheckout() {
+    const modal = await this.modalController.create({
+      component: OrderCheckoutPage,
+      showBackdrop: true,
+      cssClass: 'order-checkout-bottom',
+    });
+    await modal.present();
   }
 
   onScroll(event) {
