@@ -1,0 +1,32 @@
+<ion-header>
+  <div class="favorite-header">
+    <span>Favorite</span>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="favorite-body">
+    <div class="item" *ngFor="let favorite of favorites">
+      <div class="left">
+        <img [src]="favorite.image" alt="">
+      </div>
+      <div class="right">
+        <div class="product-name">
+          <span class="name">{{favorite.name}}</span>
+          <span class="sub-name">325ml, Price</span>
+        </div>
+        <div class="price">
+          <span>${{favorite.price}}</span>
+          <button type="button" (click)="productDetail(favorite)">
+            <img src="assets/icons/back_arrow.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="add-product">
+    <button type="button">
+      Add All To Cart
+    </button>
+  </div>
+</ion-content>

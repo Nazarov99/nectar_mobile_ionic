@@ -16,6 +16,18 @@ const routes: Routes = [
         loadChildren: () => import('../search/search.module').then(m => m.SearchPageModule)
       },
       {
+        path: 'cart',
+        loadChildren: () => import('../cart/cart.module').then( m => m.CartPageModule)
+      },
+      {
+        path: 'favorite',
+        loadChildren: () => import('../favorite/favorite.module').then( m => m.FavoritePageModule)
+      },
+      {
+        path: 'account',
+        loadChildren: () => import('../account/account.module').then( m => m.AccountPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

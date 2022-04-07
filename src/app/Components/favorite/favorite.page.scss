@@ -1,0 +1,118 @@
+ion-header{
+  background-color: #fff;
+  border-bottom: 1px solid #E2E2E2;
+
+  .favorite-header{
+    margin: 35px 0 30px 0;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+
+    span{
+      font-family: 'Gilroy-Bold', sans-serif;
+      font-size: 20px;
+      line-height: 18px;
+      color: #181725;
+    }
+  }
+}
+
+ion-content{
+  --overflow: hidden;
+
+  .favorite-body{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 130px 15px;
+    height: 100%;
+    overflow-y: scroll;
+
+    .item{
+      display: flex;
+      align-items: center;
+      padding: 25px 0;
+      border-bottom: 1px solid #E2E2E2;
+
+      .left{
+        width: 60px;
+        min-width: 20%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .right{
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        align-items: center;
+
+        .product-name{
+          display: flex;
+          flex-direction: column;
+          padding-left: 20px;
+
+          .name{
+            font-family: 'Gilroy-Bold', sans-serif;
+            font-size: 16px;
+            line-height: 18px;
+            letter-spacing: 0.1px;
+            color: #181725;
+          }
+          .sub-name{
+            font-family: 'Gilroy-Medium', sans-serif;
+            font-size: 14px;
+            line-height: 18px;
+            color: #7C7C7C;
+            margin-top: 6px;
+          }
+        }
+        .price{
+
+          button{
+            background-color: transparent;
+            padding-right: 0;
+
+            img{
+              width: 8px;
+              height: 14px;
+              transform: rotate(180deg);
+              margin-left: 18px;
+            }
+          }
+
+          span{
+            font-family: 'Gilroy', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 27px;
+            letter-spacing: 0.1px;
+            color: #181725;
+          }
+        }
+      }
+    }
+  }
+  .add-product{
+    position: absolute;
+    bottom: 80px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    button{
+      background-color: #53B175;
+      width: 90%;
+      height: 50px;
+      border-radius: 19px;
+      font-family: 'Gilroy', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 18px;
+      color: #FCFCFC;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<ion-header>
+  <div class="account-header">
+    <div class="left">
+      <img src="assets/icons/avatar.png" alt="">
+    </div>
+    <div class="right">
+      <span class="name">Afsar Hossen <img src="assets/icons/edit.svg" alt=""></span>
+      <span class="email">Imshuvo97@gmail.com</span>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="account-list">
+    <div class="item" *ngFor="let list of lists">
+      <div class="left">
+        <img [src]="list.icon" alt="">
+      </div>
+      <div class="right">
+        <span class="name">{{list.name}}</span>
+        <button type="button">
+          <img src="assets/icons/back_arrow.svg" alt="">
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="logout">
+    <div class="button">
+      <img src="assets/icons/logout.svg" alt="">
+      <span>Log Out</span>
+    </div>
+  </div>
+</ion-content>

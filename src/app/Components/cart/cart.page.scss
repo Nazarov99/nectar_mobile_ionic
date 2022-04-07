@@ -1,0 +1,170 @@
+ion-header{
+  background-color: #fff;
+  border-bottom: 1px solid #E2E2E2;
+
+  &:after{
+    display: none;
+  }
+
+  &.after{
+
+    &:after{
+      display: block;
+    }
+  }
+
+  .cart-header{
+    margin: 35px 0 30px 0;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+
+    span{
+      font-family: 'Gilroy-Bold', sans-serif;
+      font-size: 20px;
+      line-height: 18px;
+      color: #181725;
+    }
+  }
+}
+
+ion-content{
+  --overflow: hidden;
+
+  .cart-body{
+    padding: 0 15px 130px 15px;
+    height: 100%;
+    overflow-y: scroll;
+
+    .item{
+      border-bottom: 1px solid #E2E2E2;
+      display: flex;
+      padding: 20px 0;
+      align-items: center;
+
+      .left{
+        width: 75px;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: 30px;
+      }
+
+      .right{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        justify-content: space-between;
+
+        .top{
+          display: flex;
+          align-items: flex-start;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .group{
+            display: flex;
+            flex-direction: column;
+
+            .name{
+              font-family: 'Gilroy-Bold', sans-serif;
+              font-size: 16px;
+              line-height: 18px;
+              letter-spacing: 0.1px;
+              color: #181725;
+              margin-bottom: 5px;
+            }
+            .sub-name{
+              font-family: 'Gilroy-Medium', sans-serif;
+              font-size: 14px;
+              line-height: 18px;
+              color: #7C7C7C;
+            }
+          }
+          button{
+            background-color: transparent;
+          }
+        }
+        .bottom{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 12px;
+
+          .calculation{
+            display: flex;
+            align-items: center;
+
+            .count{
+              margin: 0 15px;
+            }
+
+            button{
+              border: 1px solid #F0F0F0;
+              box-sizing: border-box;
+              border-radius: 17px;
+              width: 40px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              justify-content: center;
+              background-color: transparent;
+            }
+          }
+          .price{
+            font-family: 'Gilroy', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 27px;
+            letter-spacing: 0.1px;
+            color: #181725;
+          }
+        }
+      }
+    }
+  }
+  .order-checkout{
+    position: absolute;
+    bottom: 80px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    .button-order{
+      background: #53B175;
+      border-radius: 19px;
+      width: 90%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .name{
+        font-family: 'Gilroy', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 18px;
+        color: #FCFCFC;
+      }
+      .total{
+        position: absolute;
+        right: 25px;
+        background: #489E67;
+        border-radius: 4px;
+        padding: 2px 4px;
+        font-family: 'Gilroy', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+        color: #FCFCFC;
+      }
+    }
+  }
+}

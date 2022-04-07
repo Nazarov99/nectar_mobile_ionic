@@ -1,0 +1,46 @@
+<ion-header [class.after]="scroll">
+  <div class="cart-header">
+    <span>My Cart</span>
+  </div>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+  <div class="cart-body">
+    <div class="item" *ngFor="let item of cart">
+      <div class="left">
+        <img [src]="item.image" alt="">
+      </div>
+      <div class="right">
+        <div class="top">
+          <div class="group">
+            <span class="name">{{item.name}}</span>
+            <span class="sub-name">1kg, Price</span>
+          </div>
+          <button type="button">
+            <img src="assets/icons/delete.svg" alt="">
+          </button>
+        </div>
+        <div class="bottom">
+          <div class="calculation">
+            <button type="button">
+              <img src="assets/icons/minus.svg" alt="">
+            </button>
+            <div class="count">
+              <span>{{item.count}}</span>
+            </div>
+            <button type="button">
+              <img src="assets/icons/plus.svg" alt="">
+            </button>
+          </div>
+          <span class="price">${{item.price}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="order-checkout">
+    <div class="button-order">
+      <span class="name">Go to Checkout</span>
+      <span class="total">$12.96</span>
+    </div>
+  </div>
+</ion-content>
